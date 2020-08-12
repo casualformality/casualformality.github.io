@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+
+    {% if site.google_analytics %}
+      <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ site.google_analytics }}');
+      </script>
+    {% endif %}
+    <meta charset="UTF-8">
+
+{% seo %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+  </head>
+  <body>
+    <header class="page-header" role="banner">
+      <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+      <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+      <a href="https://github.com/casualformality" class="btn">
+          <img src="img/github.png" width="16"/>&nbsp;GitHub</a>
+      <a href="https://www.linkedin.com/in/autumnnaber/" class="btn">
+          <img src="img/linkedin.png" width="16"/>&nbsp;LinkedIn</a>
+      <a href="https://orcid.org/0000-0002-8284-5503" class="btn">
+          <img src="img/orcid.png" width="16"/>&nbsp;ORCID</a>
+        <br />
+        <a href="#employment" class="btn">Employment</a>
+        <a href="#education" class="btn">Education</a>
+        <a href="#publications" class="btn">Publications</a>
+        <a href="#projects" class="btn">Projects</a>
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      {{ content }}
+    </main>
+  </body>
+</html>
